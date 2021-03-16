@@ -1,5 +1,6 @@
 const { Client } = require("pg");
 const { Models } = require("./models");
+const jwt = require('jsonwebtoken');
 // const connectionstring =
 //   "postgres://postgres:ThiyagaraJ@13.233.140.230:5432/eform";
 // const client = new Client(connectionstring);
@@ -7,7 +8,6 @@ const Express = require("express");
 const app = new Express();
 // var bodyParser = require("body-parser");
 const models = require("./models");
-
 app.use(Express.json({ limit: "600mb" }));
 app.use(
   Express.urlencoded({
@@ -16,12 +16,30 @@ app.use(
   })
 );
 
+app.post('/login',async function(req , res){
+try { 
+const project =  await models.users.findOne({ attributes:['username','password'], where: { username: req.body.username , password: req.body.password } });
+if (project === null) {
+  console.error('user not found!');
+  res.status(400).send('Invalid User');
+} else {
+  res.send(jwt.sign(req.headers.payload,process.env.JWT_TOKEN_KEY));
+}
+}
+catch(error)
+{
+  console.error("error occured is :", error)
+}
+});
+
+
 // client.connect(function (err) {
 //   if (err) {
 //     console.log(err);
 //   }
 // });
 app.post("/parse", async function (req, res) {
+  if(jwt.verify(req.headers.authorization)=true){
   await models.employees_det
     .create({
       designation: req.body.position,
@@ -66,6 +84,10 @@ app.post("/parse", async function (req, res) {
     .catch((err) => {
       res.status(400).send(err);
     });
+  }
+    else{
+      console.error('Invalid authorization');
+    }
 });
 app.listen(8000, function () {
   console.log("server is running on port 8000");
