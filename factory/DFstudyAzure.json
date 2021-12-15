@@ -1,0 +1,9 @@
+{
+	"name": "DFstudyAzure",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a9755418-bb6e-4ae2-abe0-235a51646122",
+		"tenantId": "1c33253c-bb93-4bfb-b2b4-d10d4c92df7b"
+	}
+}
