@@ -1,0 +1,7 @@
+{
+	"name": "AzureSqlDatabase1",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/792907e2-e1ae-4469-9a92-94878b48a0b5/resourceGroups/Study/providers/Microsoft.Sql/servers/studyserver112",
+		"groupId": "sqlServer"
+	}
+}
