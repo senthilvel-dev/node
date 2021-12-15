@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "\\\\Laptop-4n4820ve\\azure_share",
-			"userId": "azure_1",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiZjc1ODQ3MS1lZjlkLTRjMDgtYTM1ZC04YzFhZWVmMGJkOTciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"host": "\\\\Laptop-4n4820ve\\d",
+			"userId": "senthilvelprofessional@gmail.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkZjY3NzEwOS04OGUxLTQzNzUtOTM0OC02NmI4MGEwMjZhYjAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime2",
